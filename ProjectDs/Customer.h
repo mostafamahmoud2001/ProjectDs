@@ -20,5 +20,7 @@ public:
 	string getaddress();
 	string getemail();
 	int mainMenuCustomer();
+	void browseByCategory();
+	void browseByName();
 };
 

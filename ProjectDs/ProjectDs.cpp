@@ -61,7 +61,13 @@ int main()
 			{
 
 				int i = customer_signin(customers);
-				customers[i].mainMenuCustomer();
+				int choose = customers[i].mainMenuCustomer();
+				if (choose == 1)
+					customers[i].browseByCategory();
+				else
+					customers[i].browseByName();
+
+
 			}
 			else
 			{

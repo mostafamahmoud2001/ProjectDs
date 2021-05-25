@@ -50,6 +50,16 @@ int Customer::mainMenuCustomer()
 		else
 			cout << "Enter valid number!" << endl;
 	}
-	return 0;
+	return choose;
+}
+
+void Customer::browseByCategory()
+{
+	cout << "category";
+}
+
+void Customer::browseByName()
+{
+	cout << "Search name";
 }
 
