@@ -26,12 +26,47 @@ int  customer_signin(vector<Customer> &v1)
 	if (valid == true)
 		cout << "valid" << endl;
 	else
-		cout << "invalid" << endl;
+		cout << "invalid, incorrect e-mail or password " << endl;
 	return index;
 }
-void customer_signup()
+void customer_signup(vector<Customer> &s1)
 {
+	int phone;
+	string name, password, address, email;
 
+	cout << "Enter your name" << endl;
+	cin >> name;
+	cout << "Enter your password" << endl;
+	for (; true;)
+	{
+	cin >> password;
+	if (password.length() >= 6)
+		break;
+	else  {
+	cout << "invalid,should be more than 6"<<endl;
+	cout << "-------------" << endl;
+	cout << "enter password again" << endl;
+	}
+	}
+	cout << "Enter your address" << endl;
+	cin >> address;
+	cout << "Enter your phone" << endl;
+	for (;true;)
+	{
+
+	cin >> phone;
+	if (phone >= 11)
+		break;
+	else
+	{
+		cout << "invalid,should be equal 11" << endl;
+		cout << "-------------" << endl;
+		cout << "enter your phone again" << endl;
+			
+	}
+	}
+	Customer c3(name, email, password, phone, address);
+	s1.push_back(c3);
 }
 int main()
 {
@@ -49,7 +84,7 @@ int main()
 		cin >> num;
 		if (num == 1)
 		{
-
+		
 		}
 		else if (num == 2)
 		{
@@ -59,7 +94,6 @@ int main()
 			cin >> x;
 			if (x == 1)
 			{
-
 				int i = customer_signin(customers);
 				int choose = customers[i].mainMenuCustomer();
 				if (choose == 1)
@@ -69,15 +103,18 @@ int main()
 
 
 			}
-			else
+			else if (x == 2)
 			{
-
+				customer_signup(customers);
+				
 			}
 		}
 		else if(num == 3)
 		{
 
 		}
+		cout << customers.size() << endl;
 		vector<Customer>().swap(customers);
+
 
 }
