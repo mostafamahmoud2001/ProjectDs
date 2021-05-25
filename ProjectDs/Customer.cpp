@@ -20,3 +20,36 @@ string Customer::getPass()
 {
 	return password;
 }
+
+string Customer::getname()
+{
+	return name;
+}
+
+string Customer::getaddress()
+{
+	return address;
+}
+
+string Customer::getemail()
+{
+	return email;
+}
+
+int Customer::mainMenuCustomer()
+{
+	int choose;
+	cout << "Hello : " << getname() << endl;
+	cout << "1 - search by category " << endl;
+	cout << "2 - search by name of product " << endl;
+	cout << "Enter number : ";
+	while (true) {
+		cin >> choose;
+		if (choose == 1 || choose == 2)
+			return choose;
+		else
+			cout << "Enter valid number!" << endl;
+	}
+	return 0;
+}
+

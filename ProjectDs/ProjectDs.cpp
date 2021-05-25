@@ -60,7 +60,8 @@ int main()
 			if (x == 1)
 			{
 
-				customer_signin(customers);
+				int i = customer_signin(customers);
+				customers[i].mainMenuCustomer();
 			}
 			else
 			{
@@ -71,5 +72,6 @@ int main()
 		{
 
 		}
+		vector<Customer>().swap(customers);
 
 }

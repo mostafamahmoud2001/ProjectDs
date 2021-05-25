@@ -16,5 +16,9 @@ public:
 	Customer(string name , string email, string password, int pn , string add);
 	int getID();
 	string getPass();
+	string getname();
+	string getaddress();
+	string getemail();
+	int mainMenuCustomer();
 };
 
