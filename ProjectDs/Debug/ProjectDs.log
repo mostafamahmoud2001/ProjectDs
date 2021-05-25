@@ -1,5 +1,7 @@
-﻿  ProjectDs.cpp
-C:\Users\Mostafa\source\repos\ProjectDs\ProjectDs\ProjectDs.cpp(17,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Mostafa\source\repos\ProjectDs\ProjectDs\ProjectDs.cpp(40,72): warning C4305: 'argument': truncation from '__int64' to 'int'
-C:\Users\Mostafa\source\repos\ProjectDs\ProjectDs\ProjectDs.cpp(40,51): warning C4309: 'argument': truncation of constant value
+﻿  Product.cpp
+  ProjectDs.cpp
+C:\Users\Mostafa\source\repos\ProjectDs\ProjectDs\ProjectDs.cpp(18,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Mostafa\source\repos\ProjectDs\ProjectDs\ProjectDs.cpp(77,71): warning C4305: 'argument': truncation from '__int64' to 'int'
+C:\Users\Mostafa\source\repos\ProjectDs\ProjectDs\ProjectDs.cpp(77,51): warning C4309: 'argument': truncation of constant value
+  Generating Code...
   ProjectDs.vcxproj -> C:\Users\Mostafa\source\repos\ProjectDs\Debug\ProjectDs.exe

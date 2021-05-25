@@ -2,13 +2,14 @@
 #include <vector>
 #include<string>
 #include"Customer.h"
+#include"Seller.h"
 using namespace std;
 int  customer_signin(vector<Customer> &v1)
 {
 	string name;
 	bool valid = false;
 	string password;
-	int index = 0;
+	int index = -1;
 	cout << "Enter your name " << endl;
 	cout << "Enter your password " << endl;
 	cin >> name;
@@ -71,20 +72,28 @@ void customer_signup(vector<Customer> &s1)
 int main()
 {
 	vector<Customer> customers;
+	vector<Seller> sellers;
 	Customer c1("mostafa", "mostafa@gmail.com","12345", 01211542545, "zsd");
-	Customer c2("magdy", "magdy@gmail.com", "123445",154257575572, "zsdd");
+	Customer c2("magdy", "magdy@gmail.com", "123445",15457575572, "zsdd");
+	Seller s1("yousef","yousef@gmail.com","123456");
 	customers.push_back(c1);
 	customers.push_back(c2);
-
-	cout << "for seller press 1" << endl;
-	cout << "for Customer press 2" << endl;
-	cout << "for admin press 3" << endl;
+	sellers.push_back(s1);
+	
+	//========================================================================
+	
+	while (true)
+	{
+		cout << "for seller press 1" << endl;
+		cout << "for Customer press 2" << endl;
+		cout << "for admin press 3" << endl;
+		cout << "close program press 4" << endl;
 		int num;
 		cout << "Please , Enter a number" << endl;
 		cin >> num;
 		if (num == 1)
 		{
-		
+
 		}
 		else if (num == 2)
 		{
@@ -95,24 +104,34 @@ int main()
 			if (x == 1)
 			{
 				int i = customer_signin(customers);
-				int choose = customers[i].mainMenuCustomer();
-				if (choose == 1)
-					customers[i].browseByCategory();
-				else
-					customers[i].browseByName();
-
+				if (i == -1)
+				{
+					cout << endl << endl << "=================================================================" << endl;
+					continue;
+				}
+				while (1) {
+					int choose = customers[i].mainMenuCustomer();
+					if (choose == 1)
+						customers[i].browseByCategory();
+					else if (choose == 2)
+						customers[i].browseByName();
+					else
+						break;
+				}
 
 			}
 			else if (x == 2)
 			{
 				customer_signup(customers);
-				
+
 			}
 		}
-		else if(num == 3)
+		else if (num == 3)
 		{
 
 		}
+		cout <<endl<<endl<< "=================================================================" << endl;
+	}
 		cout << customers.size() << endl;
 		vector<Customer>().swap(customers);
 

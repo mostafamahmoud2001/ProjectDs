@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include<vector>
 using namespace std;
 class Customer
 {
@@ -12,6 +13,7 @@ class Customer
 	string password;
 	string name;
 public:
+	vector<int>cart;
 	static int CustomerNum;
 	Customer(string name , string email, string password, int pn , string add);
 	int getID();
