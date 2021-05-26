@@ -143,8 +143,68 @@ void Customer::browseByCategory(vector<Product>&v1 )
 
 }
 
-void Customer::browseByName()
+void Customer::browseByName(vector<Product>& v1)
 {
-	cout << "Search name";
+	int num;
+	string namep;
+	cout << "enter name of  product's want :: " ;
+	cin >> namep;
+	bool y=false ;
+	for (int i = 0; i < v1.size(); i++)
+	{
+		if (v1[i].getname() == namep)
+		{
+
+
+			y = true;
+			cout << "this product esast do you want buy " << v1[i].getname() << "press eny of these num " << endl;
+			cout << "1 :: take " << endl << "2 :: logout " << endl << "3 ::go to search again" << endl;
+			cin >> num;
+			if (num == 1)
+			{
+				this->cart.push_back(v1[i].getid());
+				cout << "done" << endl;
+				break;
+
+			}
+			else if (num == 2)
+			{
+				break;
+
+			}
+			else if (num == 3)
+			{
+				browseByName(v1);
+				break;
+
+
+			}
+
+
+		}
+		
+
+
+	}
+
+
+
+
+	if (y == false)
+	{
+		cout << endl << endl << endl << "didnt esast :(" << endl;
+
+
+	}
+
+
+
+
+
+
+
+
+
+
 }
 
