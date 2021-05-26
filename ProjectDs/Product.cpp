@@ -24,4 +24,9 @@ int Product::getid()
 	return id;
 }
 
+float Product::get_price()
+{
+	return price;
+}
+
 
