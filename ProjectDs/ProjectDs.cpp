@@ -3,6 +3,7 @@
 #include<string>
 #include"Customer.h"
 #include"Seller.h"
+#include "Product.h"
 using namespace std;
 int  customer_signin(vector<Customer> &v1)
 {
@@ -166,6 +167,56 @@ void seller_signup(vector<Seller>& s1) ////////// seller sign_up
 }
 int main()
 {
+	vector<Product> v1;
+
+	//mobile
+	Product x1( "sony", "mobile", 30,  1001);
+	Product x2( "iphon", "mobile", 50,  1001);
+	Product x3( "ixomy", "mobile", 60,  1001);
+	Product x4( "samsong", "mobile", 70,  1001);
+	Product x5( "oppo", "mobile", 80,  1001);
+
+	//books
+	Product x6( "herkel", "book", 90,  1001);
+	Product x7( "lord of the ring", "book", 10,  1001);
+	Product x8( "breaking bad", "book", 110,  1001);
+	Product x9( "viking", "book", 120,  1001);
+	Product x10( "peaky blinders", "book", 130,  1001);
+
+
+
+
+	//labtops
+	Product x11( "sony", "labtop", 140,  1001);
+	Product x12( "appale", "labtop", 150,  1001);
+	Product x13("lG", "labtop", 113, 1001);
+	Product	 x14( "lenovo", "labtop", 170,  1001);
+	Product x15( "hp", "labtop", 190,  1001);
+
+
+	v1.push_back(x1);
+	v1.push_back(x2);
+	v1.push_back(x3);
+	v1.push_back(x4);
+	v1.push_back(x5);
+	v1.push_back(x6);
+	v1.push_back(x7);
+	v1.push_back(x8);
+	v1.push_back(x9);
+	v1.push_back(x10);
+	v1.push_back(x11);
+	v1.push_back(x12);
+	v1.push_back(x13);
+	v1.push_back(x14);
+	v1.push_back(x15);
+	
+	
+	
+	
+	
+	
+	
+	//=================================================================================================
 	vector<Customer> customers;
 	vector<Seller> sellers;
 	Customer c1("mostafa", "mostafa@gmail.com","12345", 01211542545, "zsd");
@@ -218,7 +269,7 @@ int main()
 				while (1) {
 					int choose = customers[i].mainMenuCustomer();
 					if (choose == 1)
-						customers[i].browseByCategory();
+						customers[i].browseByCategory(v1);
 					else if (choose == 2)
 						customers[i].browseByName();
 					else

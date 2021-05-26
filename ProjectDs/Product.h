@@ -15,5 +15,10 @@ class Product
 public :
 	static int productNum;
 	Product(string name, string category, float price, int sellerId);
+
+
+	string getcategory();
+	string getname();
+	int getid();
 };
 
