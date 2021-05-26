@@ -1,4 +1,10 @@
 
+
+
+
+
+
+
 #pragma once
 
 #include <iostream>
@@ -12,7 +18,7 @@ class Product
 	string category;
 	float price;
 	int sellerId;
-    public :
+public:
 	float rate;
 	vector<int>rates;
 	static int productNum;
