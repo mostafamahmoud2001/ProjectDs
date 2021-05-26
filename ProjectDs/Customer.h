@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include  "Product.h"
 #include<vector>
 using namespace std;
 class Customer
@@ -12,6 +13,7 @@ class Customer
 	string email;
 	string password;
 	string name;
+
 public:
 	vector<int>cart;
 	static int CustomerNum;
@@ -22,7 +24,7 @@ public:
 	string getaddress();
 	string getemail();
 	int mainMenuCustomer();
-	void browseByCategory();
+	void browseByCategory( vector<Product>& v1);
 	void browseByName();
 };
 
