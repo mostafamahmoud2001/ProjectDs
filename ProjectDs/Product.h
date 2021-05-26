@@ -7,10 +7,10 @@ class Product
 {
 	int id;
 	string name;
-	float price;
 	string category;
+	float price;
 	int sellerId;
-public :
+    public :
 	float rate;
 	vector<int>rates;
 	static int productNum;
