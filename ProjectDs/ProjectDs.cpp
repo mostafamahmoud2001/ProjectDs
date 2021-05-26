@@ -273,8 +273,8 @@ int main()
 					else if (choose == 2)
 						customers[i].browseByName(v1);
 					else
-						cout << customers[i].cart.size()<< endl;
 						break;
+					}
 				}
 
 			}
