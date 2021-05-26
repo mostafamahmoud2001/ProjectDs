@@ -25,6 +25,6 @@ public:
 	string getemail();
 	int mainMenuCustomer();
 	void browseByCategory( vector<Product>& v1);
-	void browseByName();
+	void browseByName(vector<Product>& v1);
 };
 

@@ -271,8 +271,9 @@ int main()
 					if (choose == 1)
 						customers[i].browseByCategory(v1);
 					else if (choose == 2)
-						customers[i].browseByName();
+						customers[i].browseByName(v1);
 					else
+						cout << customers[i].cart.size()<< endl;
 						break;
 				}
 
