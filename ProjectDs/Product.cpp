@@ -7,6 +7,7 @@ Product::Product(string name, string category, float price, int sellerId)
 	this->price = price;
 	this->sellerId = sellerId;
 	id = productNum + 100001;
+	productNum++;
 }
 
 string Product::getcategory()
@@ -24,9 +25,7 @@ int Product::getid()
 	return id;
 }
 
-float Product::get_price()
+float Product::getprice()
 {
 	return price;
 }
-
-

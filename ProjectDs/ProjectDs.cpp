@@ -254,15 +254,15 @@ int main()
 				while (1) {
 					int choose = customers[index].mainMenuCustomer();
 					if (choose == 1)
-							customers[i].browseByCategory(productes);
+							customers[index].browseByCategory(productes);
 					else if (choose == 2)
-						customers[i].browseByName(productes);
+						customers[index].browseByName(productes);
 					else if (choose == 3)
 					{
 						cout << "Are you want to confrim the buying ? " << endl << endl;
 						cout << "If you want to confirm press 1 " << endl;
-							cout << "confirmation done Successfully!" << endl;
-							customers[index].display_total(customers[index].cart, v1);
+						cout << "confirmation done Successfully!" << endl;
+						customers[index].display_total(customers[index].cart, productes);
 					}
 					else
 						break;

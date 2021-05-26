@@ -222,7 +222,7 @@ void Customer::display_total(vector<int> &cart , vector<Product> &p)
 		for (int i = 0; i < cart.size(); i++)
 		{
 			int j = cart[i] - 100001;
-					total += p[j].get_price();
+					total += p[j].getprice();
 					cout << p[j].getname() << endl;
 					cout << i << endl;
 		}
