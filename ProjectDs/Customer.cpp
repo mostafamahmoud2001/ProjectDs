@@ -54,12 +54,6 @@ int Customer::mainMenuCustomer()
 void Customer::browseByCategory(vector<Product>&v1 )
 {
 	cout << "category";
-
-
-
-	
-
-
 	//Customer b("mkmksd", "email", " password", 5, " add");
 	//b.card.push_back(v1[0].id);
 
@@ -84,13 +78,9 @@ void Customer::browseByCategory(vector<Product>&v1 )
 		cat = "labtop";
 		break;
 
-
-
-
 	default:
 		break;
 	}
-
 	for (int i = 0; i < v1.size(); i++)
 	{
 		if (v1[i].getcategory() == cat)
@@ -98,9 +88,6 @@ void Customer::browseByCategory(vector<Product>&v1 )
 			cout << x << "::" << v1[i].getname() << endl;
 			x++;
 		}
-
-
-
 	}
 	cout << endl << " if u want buy enything of these  press 1,2,3,4,5 pleas " << endl;
 	//customers[i].card[0] = v1[0].id;
@@ -113,27 +100,8 @@ void Customer::browseByCategory(vector<Product>&v1 )
 		{
 			this->cart.push_back(v1[v].getid());
 			break;
-
 		}
-
-
-
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 void Customer::browseByName(vector<Product>& v1)
 {
@@ -157,7 +125,6 @@ void Customer::browseByName(vector<Product>& v1)
 				this->cart.push_back(v1[i].getid());
 				cout << "done" << endl;
 				break;
-
 			}
 			else if (num == 2)
 			{
@@ -168,35 +135,14 @@ void Customer::browseByName(vector<Product>& v1)
 			{
 				browseByName(v1);
 				break;
-
-
 			}
-
-
 		}
-		
-
-
 	}
-
-
-
 
 	if (y == false)
 	{
 		cout << endl << endl << endl << "didnt esast :(" << endl;
-
-
 	}
-
-
-
-
-
-
-
-
-
 
 }
 float Customer::cal_rate(vector<int> v)
