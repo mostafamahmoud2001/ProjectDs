@@ -11,3 +11,12 @@ Seller::Seller(string name, string email, string password)
 	this->password = password;
 	SellerNum++;
 }
+string Seller::getPass()
+{
+	return password;
+}
+
+string Seller::getName()
+{
+	return name;
+}
