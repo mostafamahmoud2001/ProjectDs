@@ -79,10 +79,10 @@ void Customer::browseByCategory(vector<Product>&v1 )
 	case 3:
 		cat = "labtop";
 		break;
+
 	default:
 		break;
 	}
-
 	for (int i = 0; i < v1.size(); i++)
 	{
 		if (v1[i].getcategory() == cat)
@@ -102,7 +102,6 @@ void Customer::browseByCategory(vector<Product>&v1 )
 		{
 			this->cart.push_back(v1[v].getid());
 			break;
-
 		}
 
 	}
@@ -129,7 +128,6 @@ void Customer::browseByName(vector<Product>& v1)
 				this->cart.push_back(v1[i].getid());
 				cout << "done" << endl;
 				break;
-
 			}
 			else if (num == 2)
 			{
@@ -140,8 +138,6 @@ void Customer::browseByName(vector<Product>& v1)
 			{
 				browseByName(v1);
 				break;
-
-
 			}
 		}
 	}
@@ -150,6 +146,7 @@ void Customer::browseByName(vector<Product>& v1)
 	{
 		cout << endl << endl << endl << "didnt esast :(" << endl;
 	}
+
 }
 float Customer::cal_rate(vector<int> v)
 {
