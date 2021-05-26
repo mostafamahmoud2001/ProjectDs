@@ -273,7 +273,9 @@ int main()
 					else if (choose == 2)
 						customers[i].browseByName();
 					else
+					{
 						break;
+					}
 				}
 
 			}
