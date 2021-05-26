@@ -1,8 +1,8 @@
 #include <iostream>
 #include <vector>
-#include<string>
-#include"Customer.h"
-#include"Seller.h"
+#include <string>
+#include "Customer.h"
+#include "Seller.h"
 #include "Product.h"
 using namespace std;
 int  customer_signin(vector<Customer> &v1)
@@ -274,22 +274,25 @@ int main()
 						customers[i].browseByName(v1);
 					else
 						break;
-					}
 				}
-
 			}
 			else if (x == 2)
 			{
 				customer_signup(customers);
 
 			}
+
 		}
+
+		
+
 		else if (num == 3)
 		{
 
 		}
-		cout <<endl<<endl<< "=================================================================" << endl;
 	}
+		cout <<endl<<endl<< "=================================================================" << endl;
+	
 		cout << customers.size() << endl;
 		vector<Customer>().swap(customers);
 
