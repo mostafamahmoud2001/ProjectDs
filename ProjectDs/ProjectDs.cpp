@@ -168,7 +168,6 @@ void seller_signup(vector<Seller>& s1) ////////// seller sign_up
 int main()
 {
 	vector<Product> v1;
-
 	//mobile
 	Product x1( "sony", "mobile", 30,  1001);
 	Product x2( "iphon", "mobile", 50,  1001);
@@ -183,16 +182,12 @@ int main()
 	Product x9( "viking", "book", 120,  1001);
 	Product x10( "peaky blinders", "book", 130,  1001);
 
-
-
-
 	//labtops
 	Product x11( "sony", "labtop", 140,  1001);
 	Product x12( "appale", "labtop", 150,  1001);
 	Product x13("lG", "labtop", 113, 1001);
 	Product	 x14( "lenovo", "labtop", 170,  1001);
 	Product x15( "hp", "labtop", 190,  1001);
-
 
 	v1.push_back(x1);
 	v1.push_back(x2);
@@ -209,13 +204,7 @@ int main()
 	v1.push_back(x13);
 	v1.push_back(x14);
 	v1.push_back(x15);
-	
-	
-	
-	
-	
-	
-	
+		
 	//=================================================================================================
 	vector<Customer> customers;
 	vector<Seller> sellers;
@@ -230,6 +219,7 @@ int main()
 	
 	while (true)
 	{
+		int index = 0;
 		cout << "for seller press 1" << endl;
 		cout << "for Customer press 2" << endl;
 		cout << "for admin press 3" << endl;
@@ -245,7 +235,7 @@ int main()
 			cin >> x;
 			if (x == 1)
 			{
-				int i = seller_signin(sellers);
+				 index = seller_signin(sellers);
 			}
 			else if (x == 2)
 			{
@@ -260,18 +250,25 @@ int main()
 			cin >> x;
 			if (x == 1)
 			{
-				int i = customer_signin(customers);
-				if (i == -1)
+				 index = customer_signin(customers);
+				if (index == -1)
 				{
 					cout << endl << endl << "=================================================================" << endl;
 					continue;
 				}
 				while (1) {
-					int choose = customers[i].mainMenuCustomer();
+					int choose = customers[index].mainMenuCustomer();
 					if (choose == 1)
-						customers[i].browseByCategory(v1);
+						customers[index].browseByCategory(v1);
 					else if (choose == 2)
-						customers[i].browseByName(v1);
+						customers[index].browseByName(v1);
+					else if (choose == 3)
+					{
+						cout << "Are you want to confrim the buying ? " << endl << endl;
+						cout << "If you want to confirm press 1 " << endl;
+							cout << "confirmation done Successfully!" << endl;
+							customers[index].display_total(customers[index].cart, v1);
+					}
 					else
 						break;
 				}
@@ -286,15 +283,22 @@ int main()
 
 		
 
-		else if (num == 3)
+	/*	else if (num == 3)
 		{
+			int id_of_customer = -1;
+			id_of_customer = customers[index].getID();
+			vector<Receipt> re;
+			Receipt s0(1, "mobile", 2, 2, 200, 32);
+			Receipt s(2, "book", 2, 2, 300, 33);
+			Receipt s2(3, "labtop", 2, 2, 400, 34);
+			re.push_back(s0);
+			re.push_back(s);
+			re.push_back(s2);
 
-		}
+		}*/
 	}
 		cout <<endl<<endl<< "=================================================================" << endl;
 	
 		cout << customers.size() << endl;
 		vector<Customer>().swap(customers);
-
-
 }
