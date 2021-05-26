@@ -6,14 +6,12 @@
 using namespace std;
 class Customer
 {
-	
 	int id;
 	string address;
 	int phoneNumber;
 	string email;
 	string password;
 	string name;
-
 public:
 	vector<int>cart;
 	static int CustomerNum;
@@ -26,5 +24,8 @@ public:
 	int mainMenuCustomer();
 	void browseByCategory( vector<Product>& v1);
 	void browseByName(vector<Product>& v1);
+	float cal_rate(vector<int> v);
+	void rate_product(vector<Product> p, vector<int> id);
+	void sort_product(vector<Product> p);
 };
 

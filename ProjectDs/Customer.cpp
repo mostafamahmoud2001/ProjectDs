@@ -14,32 +14,26 @@ Customer::Customer(string n, string email, string password, int pn, string add)
 	this->password = password;
 	CustomerNum++;
 }
-
 int Customer::getID()
 {
 	return this->id;
 }
-
 string Customer::getPass()
 {
 	return password;
 }
-
 string Customer::getname()
 {
 	return name;
 }
-
 string Customer::getaddress()
 {
 	return address;
 }
-
 string Customer::getemail()
 {
 	return email;
 }
-
 int Customer::mainMenuCustomer()
 {
 	int choose;
@@ -57,7 +51,6 @@ int Customer::mainMenuCustomer()
 	}
 	return choose;
 }
-
 void Customer::browseByCategory(vector<Product>&v1 )
 {
 	cout << "category";
@@ -142,7 +135,6 @@ void Customer::browseByCategory(vector<Product>&v1 )
 
 
 }
-
 void Customer::browseByName(vector<Product>& v1)
 {
 	int num;
@@ -206,5 +198,71 @@ void Customer::browseByName(vector<Product>& v1)
 
 
 
+}
+float Customer::cal_rate(vector<int> v)
+{
+	float sum = 0;
+	for (int i = 0; i < v.size(); i++)
+	{
+		sum += v[i];
+	}
+	float rate = (sum) / (v.size());
+	return rate;
+}
+void Customer::rate_product(vector<Product> p, vector<int> id)
+{
+	float rate;
+	int choice;
+	int id_val;
+	for (int i = 0; i < id.size(); i++)
+	{
+		id_val = id[i];
+		rate = 0;
+		cout << "Press 1 to rate " << p[id_val].getname() << " and 2 to skip : ";
+		//validation for choice
+		for (; true;)
+		{
+			cin >> choice;
+			if (choice == 1 || choice == 2)
+				break;
+			else
+				cout << "Enter valid choice : ";
+		}
+		if (choice == 1)
+		{
+			cout << "Enter rate for " << p[id_val].getname() << " (0 to 10) : ";
+			//validation for rate
+			for (; true;)
+			{
+				cin >> rate;
+				if (rate >= 0 && rate <= 10)
+				{
+					p[id_val].rates.push_back(rate);
+					p[id_val].rate = cal_rate(p[id_val].rates);
+					break;
+				}
+				else
+					cout << "please enter valid rate : ";
+			}
+			cout << "----------------------------------" << endl;
+		}
+		else if (choice == 2)
+		{
+			cout << "----------------------------------" << endl;
+		}
+	}
+}
+void Customer::sort_product(vector<Product> p)
+{
+	for (int i = 0; i < p.size(); i++)
+	{
+		for (int j = i + 1; j < p.size(); j++)
+		{
+			if (p[i].rate < p[j].rate)
+			{
+				swap(p[i], p[j]);
+			}
+		}
+	}
 }
 
