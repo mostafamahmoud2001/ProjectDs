@@ -27,5 +27,6 @@ public:
 	float cal_rate(vector<int> v);
 	void rate_product(vector<Product> p, vector<int> id);
 	void sort_product(vector<Product> p);
+	void display_and_confirm(vector<Product> p);
 };
 

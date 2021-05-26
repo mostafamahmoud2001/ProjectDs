@@ -18,5 +18,6 @@ public :
 	string getcategory();
 	string getname();
 	int getid();
+	float get_price();
 };
 

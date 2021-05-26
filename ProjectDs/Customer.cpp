@@ -120,20 +120,6 @@ void Customer::browseByCategory(vector<Product>&v1 )
 
 	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 void Customer::browseByName(vector<Product>& v1)
 {
@@ -263,6 +249,28 @@ void Customer::sort_product(vector<Product> p)
 				swap(p[i], p[j]);
 			}
 		}
+	}
+}
+
+void Customer::display_and_confirm(vector<Product> p)
+{
+	int  choice;
+	cout << "Are you want to confrim the buying ? " << endl << endl;
+	cout << "If you want to confirm press 1 " << endl;
+	cin >> choice;
+	if (choice == 1)
+	{
+		cout << "confirmation done Successfully!" << endl;
+		int total = 0;
+		for (int i = 0; i < p.size(); i++)
+		{
+			total += p[i].get_price();
+		}
+		cout << "The total price is : " << total << endl;
+	}
+	else
+	{
+		cout << "The confrimation canceled!";
 	}
 }
 
