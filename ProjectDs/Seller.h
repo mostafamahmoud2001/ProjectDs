@@ -10,4 +10,6 @@ class Seller{
 public :
 	Seller(string name, string email, string password);
 	static int SellerNum;
+	string getName();
+	string getPass();
 };
