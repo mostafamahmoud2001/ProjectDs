@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include "Product.h"
 using namespace std;
 class Seller{
 	int id;
@@ -12,4 +13,6 @@ public :
 	static int SellerNum;
 	string getName();
 	string getPass();
+	Product addProduct();
+	int mainMenuSeller();
 };

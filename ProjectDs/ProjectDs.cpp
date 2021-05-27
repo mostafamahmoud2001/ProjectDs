@@ -4,8 +4,9 @@
 #include "Customer.h"
 #include "Seller.h"
 #include "Product.h"
+#include "Admin.h"
 using namespace std;
-int  customer_signin(vector<Customer> &v1)
+int  customer_signin ( vector<Customer> &v1 )
 {
 	string name;
 	bool valid = false;
@@ -166,27 +167,27 @@ void seller_signup(vector<Seller>& s1) ////////// seller sign_up
 }
 int main()
 {
-
+	Admin admin("admin", "admin", "admin@gmail.com");
 	vector<Product> productes;
 	//mobile
-	Product x1( "sony", "mobile", 30,  1001);
-	Product x2( "iphon", "mobile", 50,  1001);
-	Product x3( "ixomy", "mobile", 60,  1001);
-	Product x4( "samsong", "mobile", 70,  1001);
-	Product x5( "oppo", "mobile", 80,  1001);
+	Product x1( "sony", "mobile", 30,  1001,20);
+	Product x2( "iphon", "mobile", 50,  1001,31);
+	Product x3( "ixomy", "mobile", 60,  1001,35);
+	Product x4( "samsong", "mobile", 70,  1001,36);
+	Product x5( "oppo", "mobile", 80,  1001,48);
 	//books
-	Product x6( "herkel", "book", 90,  1001);
-	Product x7( "lord of the ring", "book", 10,  1001);
-	Product x8( "breaking bad", "book", 110,  1001);
-	Product x9( "viking", "book", 120,  1001);
-	Product x10( "peaky blinders", "book", 130,  1001);
+	Product x6( "herkel", "book", 90,  1001,22);
+	Product x7( "lord of the ring", "book", 10,  1001,12);
+	Product x8( "breaking bad", "book", 110,  1001,55);
+	Product x9( "viking", "book", 120,  1001,11);
+	Product x10( "peaky blinders", "book", 130,  1001,65);
 
 	//labtops
-	Product x11( "sony", "labtop", 140,  1001);
-	Product x12( "appale", "labtop", 150,  1001);
-	Product x13("lG", "labtop", 113, 1001);
-	Product	 x14( "lenovo", "labtop", 170,  1001);
-	Product x15( "hp", "labtop", 190,  1001);
+	Product x11( "sony", "labtop", 140,  1001,22);
+	Product x12( "appale", "labtop", 150,  1001,65);
+	Product x13("lG", "labtop", 113, 1001,65);
+	Product	 x14( "lenovo", "labtop", 170,  1001,12);
+	Product x15( "hp", "labtop", 190,  1001,65);
 	productes.push_back(x1);
 	productes.push_back(x2);
 	productes.push_back(x3);
@@ -231,6 +232,20 @@ int main()
 			if (x == 1)
 			{
 				 index = seller_signin(sellers);
+				 if (index == -1)
+					 continue;
+				 cout << endl << "=================================================================" << endl << "Hello " << sellers[index].getName() << endl;
+				 while (1)
+				 {
+					 int x= sellers[index].mainMenuSeller();
+					 if (x == 1)
+					 {
+						 admin.pushToWaited(sellers[index].addProduct());
+					 }
+					 else
+						 break;
+
+				 }
 			}
 			else if (x == 2)
 			{
@@ -278,19 +293,28 @@ int main()
 
 		
 
-	/*	else if (num == 3)
+		else if (num == 3)
 		{
-			int id_of_customer = -1;
-			id_of_customer = customers[index].getID();
-			vector<Receipt> re;
-			Receipt s0(1, "mobile", 2, 2, 200, 32);
-			Receipt s(2, "book", 2, 2, 300, 33);
-			Receipt s2(3, "labtop", 2, 2, 400, 34);
-			re.push_back(s0);
-			re.push_back(s);
-			re.push_back(s2);
-
-		}*/
+			string email,pass;
+			cout << "enter Email : ";
+			cin >> email;
+			cout << "Enter Password : ";
+			cin >> pass;
+			if (email == admin.getEmail() && pass == admin.getpassword())
+			{
+				while (true)
+				{
+					int x = admin.AdminMainMenu();
+					if (x == 1)
+					{
+						admin.viewWaitedProduct(productes);
+					}
+					else
+						break;
+				}
+			}
+			
+		}
 	}
 		cout <<endl<<endl<< "=================================================================" << endl;
 	

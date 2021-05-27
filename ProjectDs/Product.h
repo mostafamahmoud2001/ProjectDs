@@ -10,13 +10,15 @@ class Product
 	float price;
 	string category;
 	int sellerId;
+	int quantity;
 public:
 	float rate;
 	vector<int>rates;
 	static int productNum;
-	Product(string name, string category, float price, int sellerId);
+	Product(string name, string category, float price, int sellerId, int quantity);
 	string getcategory();
 	string getname();
 	int getid();
 	float getprice();
+	int getquantity();
 };
