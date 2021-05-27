@@ -8,14 +8,14 @@ class Customer
 {
 	int id;
 	string address;
-	int phoneNumber;
+	string phoneNumber;
 	string email;
 	string password;
 	string name;
 public:
 	vector<int>cart;
 	static int CustomerNum;
-	Customer(string name , string email, string password, int pn , string add);
+	Customer(string name , string email, string password, string pn , string add);
 	int getID();
 	string getPass();
 	string getname();

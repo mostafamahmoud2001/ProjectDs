@@ -9,6 +9,7 @@ class Seller{
 	string email;
 	string password;
 public :
+	string getemail();
 	Seller(string name, string email, string password);
 	static int SellerNum;
 	string getName();

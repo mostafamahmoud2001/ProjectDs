@@ -1,5 +1,4 @@
 #include "Admin.h"
-
 Admin::Admin(string name, string pass, string email)
 {
     this->name =  name;

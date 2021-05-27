@@ -7,7 +7,6 @@
 using namespace std;
 class Admin
 {
-	
 	string name;
 	string email;
 	string password;
@@ -18,7 +17,7 @@ public :
 	string getpassword();
 	string getEmail();
 	void pushToWaited(Product p);
-	void viewWaitedProduct(vector<Product>& productes );
+	void viewWaitedProduct(vector<Product>& productes);
 	int AdminMainMenu();
 };
 

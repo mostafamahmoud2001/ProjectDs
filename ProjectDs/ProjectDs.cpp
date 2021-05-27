@@ -6,20 +6,22 @@
 #include "Product.h"
 #include "Admin.h"
 using namespace std;
-int  customer_signin ( vector<Customer> &v1 )
+//Done
+int  customer_signin (vector<Customer> &v1 )
 {
 	string name;
 	bool valid = false;
 	string password;
 	int index = -1;
-	cout << "Enter your name " << endl;
-	cout << "Enter your password " << endl;
+	cout << "                                          ______  Sign in(Customer)  ______" << endl;
+	cout << "Enter your email : " ;
 	cin >> name;
+	cout << "Enter your password : " ;
 	cin >> password;
 
 	for (int i = 0; i < v1.size(); i++)
 	{
-		if (name == v1[i].getname() && password == v1[i].getPass())
+		if (name == v1[i].getemail() && password == v1[i].getPass())
 		{
 			valid = true;
 			index = i;
@@ -27,33 +29,33 @@ int  customer_signin ( vector<Customer> &v1 )
 		}		
 	}
 	if (valid == true)
-		cout << "valid" << endl;
+		cout << "You loged in successfully" << endl;
 	else
-		cout << "invalid, incorrect e-mail or password " << endl;
+		cout << "Incorrect email or password " << endl;
+	cout << endl << "________________________________________________________________________________________________________________________" << endl;
 	return index;
 }
+//Done
 void customer_signup(vector<Customer> &s1)
 {
-	int phone;
+	string phone;
 	string name, password, address, email;
-
-	cout << "Enter your name" << endl;
+	cout << "                                          ______  Sign up(Customer)  ______" << endl;
+	cout << "Enter your name : ";
 	cin >> name;
-	cout << "Enter your password" << endl;
+	cout << "Enter your password : ";
 	for (;true;)
 	{
 	cin >> password;
 	if (password.length() >= 6)
 		break;
 	else  {
-	cout << "invalid,should be more than 6"<<endl;
-	cout << "-------------" << endl;
-	cout << "enter password again" << endl;
+	cout << "The password should be more than 6 digits : ";
 	}
 	}
-	cout << "Enter your address" << endl;
+	cout << "Enter your address : " ;
 	cin >> address;
-	cout << "Enter your e-mail" << endl;
+	cout << "Enter your email : ";
 	while (true)
 	{
 		bool mail = false;
@@ -70,46 +72,42 @@ void customer_signup(vector<Customer> &s1)
 		break;
 	else
 	{
-		cout << "invalid,should contain @" << endl;
-		cout << "-------------" << endl;
-		cout << "enter your e-mail again" << endl;
+		cout << "Invalid email, Enter your e-mail again : ";
+		
 	}
 	}
-	cout << "Enter your phone" << endl;
+	cout << "Enter your phone number : ";
 	for (;true;)
 	{
 	cin >> phone;
-	if (phone >= 11)
+	if (phone.size() == 11)
 	{
-		cout << "--------------------" << endl;
-		cout << "valid" << endl;
 		break;
 	}
 	else
 	{
-		cout << "invalid,should be equal 11" << endl;
-		cout << "-------------" << endl;
-		cout << "enter your phone again" << endl;
-			
+		cout << "Invalid phone number, Enter your phone number again : ";	
 	}
 	}
+	cout << endl << "________________________________________________________________________________________________________________________" << endl;
 	Customer c3(name, email, password, phone, address);
 	s1.push_back(c3);
 }
-int seller_signin(vector<Seller> v1) //////// seller sign_in
+//Done
+int seller_signin(vector<Seller> v1) 
 {
 	string name;
 	bool valid = false;
 	string password;
 	int index = -1;
-	cout << "Enter your name " << endl;
-	cout << "Enter your password " << endl;
+	cout << "                                          ______  Sign in(Seller)  ______" << endl;
+	cout << "Enter your email : " ;
 	cin >> name;
+	cout << "Enter your password : ";
 	cin >> password;
-
 	for (int i = 0; i < v1.size(); i++)
 	{
-		if (name == v1[i].getName() && password == v1[i].getPass())
+		if (name == v1[i].getemail() && password == v1[i].getPass())
 		{
 			valid = true;
 			index = i;
@@ -117,30 +115,30 @@ int seller_signin(vector<Seller> v1) //////// seller sign_in
 		}
 	}
 	if (valid == true)
-		cout << "valid" << endl;
+		cout << "You loged in successfully" << endl;
 	else
-		cout << "invalid, incorrect e-mail or password " << endl;
+		cout << "Incorrect e-mail or password " << endl;
+	cout << endl << "________________________________________________________________________________________________________________________" << endl;
 	return index;
 }
-void seller_signup(vector<Seller>& s1) ////////// seller sign_up
+//Done
+void seller_signup(vector<Seller>& s1) 
 {
 	string name, password, email;
-
-	cout << "Enter your name" << endl;
+	cout << "                                          ______  Sign up(Seller)  ______" << endl;
+	cout << "Enter your name : ";
 	cin >> name;
-	cout << "Enter your password" << endl;
+	cout << "Enter your password : ";
 	for (; true;)
 	{
 		cin >> password;
 		if (password.length() >= 6)
 			break;
 		else {
-			cout << "invalid,should be more than 6" << endl;
-			cout << "-------------" << endl;
-			cout << "enter password again" << endl;
+			cout << "The password should be more than 6 digits : ";
 		}
-	}
-	cout << "Enter your e-mail" << endl;
+		}
+	cout << "Enter your e-mail : " ;
 	while (true)
 	{
 		bool mail = false;
@@ -157,16 +155,16 @@ void seller_signup(vector<Seller>& s1) ////////// seller sign_up
 			break;
 		else
 		{
-			cout << "invalid,should contain @" << endl;
-			cout << "-------------" << endl;
-			cout << "enter your e-mail again" << endl;
+			cout << "Invalid email, Enter your e-mail again : ";
 		}
 	}
+	cout << endl << "________________________________________________________________________________________________________________________" << endl;
 	Seller c3(name, email, password);
 	s1.push_back(c3);
 }
 int main()
 {
+	cout << "                                ___________  Welcome to the online market  ___________"<<endl;
 	Admin admin("admin", "admin", "admin@gmail.com");
 	vector<Product> productes;
 	//mobile
@@ -206,8 +204,8 @@ int main()
 	//=================================================================================================
 	vector<Customer> customers;
 	vector<Seller> sellers;
-	Customer c1("mostafa", "mostafa@gmail.com","12345", 01211542545, "zsd");
-	Customer c2("magdy", "magdy@gmail.com", "123445",15457575572, "zsdd");
+	Customer c1("mostafa", "mostafa@gmail.com","12345", "01211542545", "zsd");
+	Customer c2("magdy", "magdy@gmail.com", "123445","15457575572", "zsdd");
 	Seller s1("yousef","yousef@gmail.com","123456");
 	customers.push_back(c1);
 	customers.push_back(c2);
@@ -216,25 +214,34 @@ int main()
 	while (true)
 	{
 		int index = 0;
-		cout << "for seller press 1" << endl;
-		cout << "for Customer press 2" << endl;
-		cout << "for admin press 3" << endl;
-		cout << "close program press 4" << endl;
+		cout << endl<<endl;
+		cout << " 1- Seller                     2- Customer                      3-Admin                     4- Close the program " << endl;
+		cout << endl;
 		int num;
-		cout << "Please , Enter a number" << endl;
+		cout << "Your choice : ";
 		cin >> num;
+		cout << endl << "________________________________________________________________________________________________________________________"<<endl;
+		
 		if (num == 1)
 		{
-			cout << "for sign in press 1" << endl;
-			cout << "for sign up press 2" << endl;
+			cout << "1- Sign in                     2- sign up" << endl << endl;;
+			cout << "Your choice : ";
 			int x;
-			cin >> x;
+			while (1)
+			{
+				cin >> x;
+				if (x != 1 && x != 2)
+					cout << "Invalid, Enter your choice again : ";
+				else
+					break;
+			}
+			cout << endl << "________________________________________________________________________________________________________________________" << endl;
 			if (x == 1)
 			{
 				 index = seller_signin(sellers);
 				 if (index == -1)
 					 continue;
-				 cout << endl << "=================================================================" << endl << "Hello " << sellers[index].getName() << endl;
+				 cout <<endl<< "Hello " << sellers[index].getName() << endl;
 				 while (1)
 				 {
 					 int x= sellers[index].mainMenuSeller();
@@ -244,7 +251,6 @@ int main()
 					 }
 					 else
 						 break;
-
 				 }
 			}
 			else if (x == 2)
@@ -254,19 +260,27 @@ int main()
 		}
 		else if (num == 2)
 		{
-			cout << "for sign in press 1" << endl;
-			cout << "for sign up press 2" << endl;
+			cout << "1- Sign in                     2- sign up" << endl << endl;;
+			cout << "Your choice : ";
 			int x;
-			cin >> x;
+			while (1)
+			{
+				cin >> x;
+				if (x != 1 && x != 2)
+					cout << "Invalid, Enter your choice again : ";
+				else
+					break;
+			}
+			cout << endl << "________________________________________________________________________________________________________________________" << endl;
 			if (x == 1)
 			{
 				 index = customer_signin(customers);
 				if (index == -1)
 				{
-					cout << endl << endl << "=================================================================" << endl;
 					continue;
 				}
-				while (1) {
+				while (1) 
+				{
 					int choose = customers[index].mainMenuCustomer();
 					if (choose == 1)
 							customers[index].browseByCategory(productes);
@@ -274,6 +288,7 @@ int main()
 						customers[index].browseByName(productes);
 					else if (choose == 3)
 					{
+						//Saloha
 						cout << "Are you want to confrim the buying ? " << endl << endl;
 						cout << "If you want to confirm press 1 " << endl;
 						cout << "confirmation done Successfully!" << endl;
@@ -288,20 +303,19 @@ int main()
 				customer_signup(customers);
 
 			}
-
 		}
-
-		
-
 		else if (num == 3)
 		{
 			string email,pass;
-			cout << "enter Email : ";
+			cout << "                                          ______  Sign in(Admin)  ______" << endl;
+			cout << "Enter your email : ";
 			cin >> email;
-			cout << "Enter Password : ";
+			cout << "Enter your Password : ";
 			cin >> pass;
+	
 			if (email == admin.getEmail() && pass == admin.getpassword())
 			{
+				cout << endl << "________________________________________________________________________________________________________________________" << endl;
 				while (true)
 				{
 					int x = admin.AdminMainMenu();
@@ -310,6 +324,7 @@ int main()
 						admin.viewWaitedProduct(productes);
 					}
 					else
+						cout << endl << "________________________________________________________________________________________________________________________" << endl;
 						break;
 				}
 			}
