@@ -13,6 +13,7 @@ class Customer
 	string password;
 	string name;
 public:
+	vector<int>quantity;
 	vector<int>cart;
 	static int CustomerNum;
 	Customer(string name , string email, string password, string pn , string add);

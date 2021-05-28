@@ -5,17 +5,14 @@ Admin::Admin(string name, string pass, string email)
     this->password = pass;
     this->email = email;
 }
-
 string Admin::getname()
 {
     return name;
 }
-
 string Admin::getpassword()
 {
     return password;
 }
-
 string Admin::getEmail()
 {
     return email;
@@ -24,7 +21,6 @@ void Admin::pushToWaited(Product p)
 {
     WaitedProduct.push(p);
 }
-
 void Admin::viewWaitedProduct(vector<Product>& productes)
 {
     int x;
@@ -60,7 +56,6 @@ void Admin::viewWaitedProduct(vector<Product>& productes)
     }
     
 }
-
 int Admin::AdminMainMenu()
 {
     int s;
