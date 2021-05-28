@@ -21,4 +21,5 @@ public:
 	int getid();
 	float getprice();
 	int getquantity();
+	void setquantity(int);
 };

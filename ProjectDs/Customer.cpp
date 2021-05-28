@@ -88,22 +88,39 @@ void Customer::browseByCategory(vector<Product>&v1 )
 		if (v1[i].getcategory() == cat)
 		{
 			cout << x << "::" << v1[i].getname() << endl;
+			cout  << "rate of product is " << v1[i].rate << endl;
+			cout  << "the price is "<<v1[i].getprice() << endl;
+			cout << "_________________________________" << endl;
 			x++;
 		}
 	}
-	cout << endl << " if u want buy enything of these  press 1,2,3,4,5 pleas " << endl;
-	//customers[i].card[0] = v1[0].id;
-
+	cout << endl << "Enter product name to buy and no to exit : ";
+	int quan;
 	cin >> inp2;
+	if (inp2 == "no")
+		return;
+	cout << "enter the quantity you want : ";
+	cin >> quan;
+	
 	for (int v = 0; v < v1.size(); v++)
 	{
 
 		if (v1[v].getname() == inp2)
 		{
+			while (1)
+			{
+				if (v1[v].getquantity() >= quan)
+					break;
+				cout << "this quantity is not avilable , enter new quantity , enter (0) to back"<<endl;
+				cin >> quan;
+			}
+			if (!quan)
+			   break;
 			this->cart.push_back(v1[v].getid());
+			this->quantity.push_back(quan);
+			v1[v].setquantity(v1[v].getquantity() - quan);
 			break;
 		}
-
 	}
 }
 void Customer::browseByName(vector<Product>& v1)
@@ -214,7 +231,6 @@ void Customer::sort_product(vector<Product> p)
 		}
 	}
 }
-
 void Customer::display_total(vector<int> &cart , vector<Product> &p)
 {
 		float total = 0;
