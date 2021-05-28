@@ -4,7 +4,7 @@
 #include  "Product.h"
 using namespace std;
 int Customer::CustomerNum = 0;
-Customer::Customer(string n, string email, string password, int pn, string add)
+Customer::Customer(string n, string email, string password, string pn, string add)
 {
 	id = CustomerNum + 1001;
 	name = n;
