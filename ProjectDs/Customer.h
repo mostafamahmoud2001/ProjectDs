@@ -28,5 +28,6 @@ public:
 	void rate_product(vector<Product> p, vector<int> id);
 	void sort_product(vector<Product> p);
 	void display_total(vector<int> &cart , vector<Product> &p);
+	void display_rates(vector<Product>& rate);
 };
 

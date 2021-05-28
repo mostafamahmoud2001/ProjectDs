@@ -293,6 +293,7 @@ int main()
 						cout << "If you want to confirm press 1 " << endl;
 						cout << "confirmation done Successfully!" << endl;
 						customers[index].display_total(customers[index].cart, productes);
+						customers[index].display_rates(productes);
 					}
 					else
 						break;

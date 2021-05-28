@@ -228,3 +228,20 @@ void Customer::display_total(vector<int> &cart , vector<Product> &p)
 		}
 		cout << "The total price is : " << total << endl;
 }
+
+void Customer::display_rates(vector<Product>& rate)
+{
+int	x = 1;
+
+	for (int i = 0; i < rate.size(); i++)
+	{
+		
+
+		cout << x << " :: rate of " << rate[i].getname() << " is ---> " << rate[i].rate << " quantety is ---> " << rate[i].getquantity() << endl;
+		cout << "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- "<< endl;
+
+
+
+	}
+
+}
