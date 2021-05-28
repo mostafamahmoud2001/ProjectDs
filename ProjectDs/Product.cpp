@@ -30,7 +30,6 @@ int Product::getquantity()
 {
 	return quantity;
 }
-
 void Product::setquantity(int q)
 {
 	this->quantity = q;

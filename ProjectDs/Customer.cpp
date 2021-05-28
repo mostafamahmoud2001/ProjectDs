@@ -88,14 +88,13 @@ void Customer::browseByCategory(vector<Product>&v1 )
 		if (v1[i].getcategory() == cat)
 		{
 			cout << x << "::" << v1[i].getname() << endl;
-			cout << x << "rate of product is " << v1[i].rate << endl;
-			cout << x << "the price is "<<v1[i].getprice() << endl;
+			cout  << "rate of product is " << v1[i].rate << endl;
+			cout  << "the price is "<<v1[i].getprice() << endl;
 			cout << "_________________________________" << endl;
 			x++;
 		}
 	}
-	cout << endl << " if u want buy enything of these , enter product name , if you dont want enter no " << endl;
-	//customers[i].card[0] = v1[0].id;
+	cout << endl << "Enter product name to buy and no to exit : ";
 	int quan;
 	cin >> inp2;
 	if (inp2 == "no")

@@ -62,7 +62,8 @@ int Admin::AdminMainMenu()
     cout << "1 - To show waited list "<<endl;
     cout << "2 - To logout " << endl;
     cout << "Enter number : ";
-    while (1) {
+    while (1)
+    {
         cin >> s;
         if ((s ==1 || s == 2 ))
             return s;
