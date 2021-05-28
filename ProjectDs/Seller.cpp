@@ -2,7 +2,10 @@
 #include<iostream>
 using namespace std;
 int Seller::SellerNum = 0;
-
+string Seller::getemail()
+{
+	return email;
+}
 Seller::Seller(string name, string email, string password)
 {
 	this->email = email;
@@ -15,7 +18,6 @@ string Seller::getPass()
 {
 	return password;
 }
-
 Product Seller::addProduct()
 {
 	string name;
