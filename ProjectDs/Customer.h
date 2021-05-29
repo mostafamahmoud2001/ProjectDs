@@ -3,7 +3,7 @@
 #include <string>
 #include "Product.h"
 #include<vector>
-#include "Receipt.h"
+#include "Reciept.h"
 
 using namespace std;
 class Customer
