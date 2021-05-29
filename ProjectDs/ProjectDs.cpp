@@ -168,39 +168,38 @@ int main()
 	Admin admin("admin", "admin", "admin@gmail.com");
 	vector<Product> productes;
 	//mobile
-	Product x1( "sony", "mobile", 30,  1001,20);
-	Product x2( "iphon", "mobile", 50,  1001,31);
-	Product x3( "ixomy", "mobile", 60,  1001,35);
-	Product x4( "samsong", "mobile", 70,  1001,36);
-	Product x5( "oppo", "mobile", 80,  1001,48);
-	//books
-	Product x6( "herkel", "book", 90,  1001,22);
-	Product x7( "lord of the ring", "book", 10,  1001,12);
-	Product x8( "breaking bad", "book", 110,  1001,55);
-	Product x9( "viking", "book", 120,  1001,11);
-	Product x10( "peaky blinders", "book", 130,  1001,65);
-
+	Product p1( "Sony", "mobile", 3300,  1001,20);
+	Product p2( "Iphone", "mobile",6000,  1001,31);
+	Product p3( "Nokia", "mobile", 2500,  1001,35);
+	Product p4( "Huawei","mobile", 4000,  1001,36);
+	Product p5( "Oppo", "mobile", 3500,  1001,48);
+	//tv
+	Product p6( "Toshiba", "tv", 7200,  1001,22);
+	Product p7( "LG", "tv", 10, 8500,12);
+	Product p8( "Samsung", "tv", 12500,  1001,55);
+	Product p9( "Panasonic", "tv", 9400,  1001,11);
+	Product p10( "Fresh", "tv", 6500,  1001,65);
 	//labtops
-	Product x11( "sony", "labtop", 140,  1001,22);
-	Product x12( "appale", "labtop", 150,  1001,65);
-	Product x13("lG", "labtop", 113, 1001,65);
-	Product	 x14( "lenovo", "labtop", 170,  1001,12);
-	Product x15( "hp", "labtop", 190,  1001,65);
-	productes.push_back(x1);
-	productes.push_back(x2);
-	productes.push_back(x3);
-	productes.push_back(x4);
-	productes.push_back(x5);
-	productes.push_back(x6);
-	productes.push_back(x7);
-	productes.push_back(x8);
-	productes.push_back(x9);
-	productes.push_back(x10);
-	productes.push_back(x11);
-	productes.push_back(x12);
-	productes.push_back(x13);
-	productes.push_back(x14);
-	productes.push_back(x15);
+	Product p11( "Lenovo", "labtop", 12000,  1001,22);
+	Product p12( "Dell", "labtop", 15000,  1001,65);
+	Product p13("Mac", "labtop", 20000, 1001,65);
+	Product	p14( "Asus", "labtop", 18000,  1001,12);
+	Product p15( "Hp", "labtop", 13000,  1001,65);
+	productes.push_back(p1);
+	productes.push_back(p2);
+	productes.push_back(p3);
+	productes.push_back(p4);
+	productes.push_back(p5);
+	productes.push_back(p6);
+	productes.push_back(p7);
+	productes.push_back(p8);
+	productes.push_back(p9);
+	productes.push_back(p10);
+	productes.push_back(p11);
+	productes.push_back(p12);
+	productes.push_back(p13);
+	productes.push_back(p14);
+	productes.push_back(p15);
 	//=================================================================================================
 	vector<Customer> customers;
 	vector<Seller> sellers;
@@ -242,6 +241,8 @@ int main()
 				 if (index == -1)
 					 continue;
 				 cout <<endl<< "Hello " << sellers[index].getName() << endl;
+			cout << endl << "_________________" << endl;
+
 				 while (1)
 				 {
 					 int x= sellers[index].mainMenuSeller();
