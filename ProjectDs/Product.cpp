@@ -34,3 +34,13 @@ void Product::setquantity(int q)
 {
 	this->quantity = q;
 }
+
+int Product::getIndex(int id ,vector<Product>p)
+{
+	for (int i = 0; i < p.size(); i++)
+	{
+		if (p[i].getid() == id)
+			return i;
+	}
+	return -1;
+}

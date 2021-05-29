@@ -1,8 +1,10 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include  "Product.h"
+#include "Product.h"
 #include<vector>
+#include "Receipt.h"
+
 using namespace std;
 class Customer
 {
@@ -12,6 +14,7 @@ class Customer
 	string email;
 	string password;
 	string name;
+	vector <Receipt> receipt;
 public:
 	vector<int>quantity;
 	vector<int>cart;
@@ -26,8 +29,9 @@ public:
 	void browseByCategory( vector<Product>& v1);
 	void browseByName(vector<Product>& v1);
 	float cal_rate(vector<int> v);
-	void rate_product(vector<Product> p, vector<int> id);
-	void sort_product(vector<Product> p);
+	void rate_product(vector<Product> &p, vector<int> id);
+	void sort_product(vector<Product>& p);
 	void display_total(vector<int> &cart , vector<Product> &p);
+	void display_allreceipt(vector<Product>p);
 };
 

@@ -36,16 +36,18 @@ string Customer::getemail()
 }
 int Customer::mainMenuCustomer()
 {
+
 	int choose;
 	cout << "Hello : " << getname() << endl;
 	cout << "1 - search by category " << endl;
 	cout << "2 - search by name of product " << endl;
 	cout << "3 - display the total price " << endl;
-	cout << "4 - logout" << endl;
+	cout << "4 - display all receipt " << endl;
+	cout << "5 - logout" << endl;
 	cout << "Enter number : ";
 	while (true) {
 		cin >> choose;
-		if (choose == 1 || choose == 2 || choose == 3 || choose == 4)
+		if (choose == 1 || choose == 2 || choose == 3 || choose == 4 || choose == 5 )
 			return choose;
 		else
 			cout << "Enter valid number!" << endl;
@@ -55,10 +57,6 @@ int Customer::mainMenuCustomer()
 void Customer::browseByCategory(vector<Product>&v1 )
 {
 	cout << "category";
-
-	//Customer b("mkmksd", "email", " password", 5, " add");
-	//b.card.push_back(v1[0].id);
-
 	int  inp;
 	string inp2;
 	int inp3 = 0;
@@ -66,7 +64,6 @@ void Customer::browseByCategory(vector<Product>&v1 )
 	string cat;
 	cout << "there are all categories if u want eny of these ples enter name of  1,2,3 or 4" << endl;
 	cout << "1: mobile" << endl << "2: book" << endl << "3: labtop" << endl;
-
 	cin >> inp;
 	switch (inp)
 	{
@@ -129,21 +126,23 @@ void Customer::browseByName(vector<Product>& v1)
 	string namep;
 	cout << "enter name of  product's want :: " ;
 	cin >> namep;
+	int q;
+	cout << "enter quantity : ";
+	cin >> q;
 	bool y=false ;
 	for (int i = 0; i < v1.size(); i++)
 	{
 		if (v1[i].getname() == namep)
 		{
-
-
 			y = true;
-			cout << "this product esast do you want buy " << v1[i].getname() << "press eny of these num " << endl;
-			cout << "1 :: take " << endl << "2 :: logout " << endl << "3 ::go to search again" << endl;
+			cout << "this product exist do you want buy " << v1[i].getname() << "press eny of these num " << endl;
+			cout << "1 :: take " << endl << "2 :: back to main menu" << endl << "3 ::go to search again" << endl;
 			cin >> num;
 			if (num == 1)
 			{
 				this->cart.push_back(v1[i].getid());
-				cout << "done" << endl;
+				quantity.push_back(q);
+				cout <<endl<< "________________________________" << endl << "done" << endl;
 				break;
 			}
 			else if (num == 2)
@@ -161,7 +160,7 @@ void Customer::browseByName(vector<Product>& v1)
 
 	if (y == false)
 	{
-		cout << endl << endl << endl << "didnt esast :(" << endl;
+		cout << endl << endl << endl << "doesn't exist :(" << endl;
 	}
 
 }
@@ -175,14 +174,14 @@ float Customer::cal_rate(vector<int> v)
 	float rate = (sum) / (v.size());
 	return rate;
 }
-void Customer::rate_product(vector<Product> p, vector<int> id)
+void Customer::rate_product(vector<Product> & p, vector<int> id)
 {
 	int rate;
 	int choice;
 	int id_val;
 	for (int i = 0; i < id.size(); i++)
 	{
-		id_val = id[i];
+		id_val = Product::getIndex(id[i],p);
 		rate = 0;
 		cout << "Press 1 to rate " << p[id_val].getname() << " and 2 to skip : ";
 		//validation for choice
@@ -218,7 +217,7 @@ void Customer::rate_product(vector<Product> p, vector<int> id)
 		}
 	}
 }
-void Customer::sort_product(vector<Product> p)
+void Customer::sort_product(vector<Product> &p)
 {
 	for (int i = 0; i < p.size(); i++)
 	{
@@ -233,14 +232,57 @@ void Customer::sort_product(vector<Product> p)
 }
 void Customer::display_total(vector<int> &cart , vector<Product> &p)
 {
-		float total = 0;
-		cout << cart.size() << endl;
-		for (int i = 0; i < cart.size(); i++)
+	if (cart.size() == 0)
+	{
+		cout << "your cart is empty " << endl;
+		return;
+	}
+	float total = 0;
+	for (int i = 0; i < cart.size(); i++)
+	{
+		int j = Product::getIndex(cart[i],p);
+				total += p[j].getprice() * quantity[i];
+				cout << p[j].getname() << endl;
+				cout << p[j].getprice() << endl;
+	}
+	cout << "The total price is : " << total << endl;
+	cout << "Do you want confirm ? press 1 , if not press any number: "<<endl;
+	int s;
+	cin >> s ;
+	if (s == 1)
+	{
+		cout << "Confirmaation succesful" << endl;
+		this->receipt.push_back(Receipt::storeReceipt(cart, p, quantity, this->getID()));
+		cout << "if you want to rate products press 1 ,else press any number" << endl;
+		int t;
+		cin >> t;
+		if (t == 1)
+			rate_product(p, cart);
+		cart.clear();
+		quantity.clear();
+		cout << "do you want to display receipt ? press 1 , else press any number : " << endl;
+		cin >> s;
+		if (s == 1)
 		{
-			int j = cart[i] - 100001;
-					total += p[j].getprice();
-					cout << p[j].getname() << endl;
-					cout << i << endl;
+			receipt[receipt.size() - 1].showReciept(p);
+			cout << endl;
 		}
-		cout << "The total price is : " << total << endl;
+
+
+		else
+			return;
+	}
+	else 
+		return;
+
+}
+
+void Customer::display_allreceipt(vector<Product>p)
+{
+	for (int i = 0; i < receipt.size(); i++)
+	{
+		cout << "Receipt " << i + 1 << endl;
+		receipt[i].showReciept(p);
+		cout << endl << "________________________________________________";
+	}
 }

@@ -22,4 +22,5 @@ public:
 	float getprice();
 	int getquantity();
 	void setquantity(int);
+	static int getIndex(int, vector<Product>p);
 };

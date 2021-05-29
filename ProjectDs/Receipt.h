@@ -1,17 +1,20 @@
 #pragma once
 #include <string>
+#include<vector>
+#include"Product.h"
 using namespace std;
 class Receipt
 {
-public:
+	static int numID;
 	int id;
-	string Products_names;
-	int amount_of_each_product;
 	int Customer_ID;
 	float total_price;
-	float Shipment_price = 30;
+	static float Shipment_price;
 	vector<Product> pro;
+public:
 	Receipt();
-	void display_receipt(vector<int> cart, vector<Product> p, vector<Receipt> &r);
+	static Receipt storeReceipt(vector<int> cart, vector<Product> p, vector<int> q,int cusID);
+	 void showReciept(vector <Product> p);
+
 };
 

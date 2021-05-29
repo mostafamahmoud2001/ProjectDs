@@ -281,19 +281,18 @@ int main()
 				}
 				while (1) 
 				{
+					customers[index].sort_product(productes);
 					int choose = customers[index].mainMenuCustomer();
 					if (choose == 1)
-							customers[index].browseByCategory(productes);
+						customers[index].browseByCategory(productes);
 					else if (choose == 2)
 						customers[index].browseByName(productes);
 					else if (choose == 3)
 					{
-						//Saloha
-						cout << "Are you want to confrim the buying ? " << endl << endl;
-						cout << "If you want to confirm press 1 " << endl;
-						cout << "confirmation done Successfully!" << endl;
 						customers[index].display_total(customers[index].cart, productes);
 					}
+					else if (choose == 4)
+						customers[index].display_allreceipt(productes);
 					else
 						break;
 				}
