@@ -1,12 +1,1 @@
-﻿  Customer.cpp
-C:\Users\youse\OneDrive\Documents\GitHub\ProjectDs\ProjectDs\Customer.cpp(86,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\youse\OneDrive\Documents\GitHub\ProjectDs\ProjectDs\Customer.cpp(98,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\youse\OneDrive\Documents\GitHub\ProjectDs\ProjectDs\Customer.cpp(116,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\youse\OneDrive\Documents\GitHub\ProjectDs\ProjectDs\Customer.cpp(154,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\youse\OneDrive\Documents\GitHub\ProjectDs\ProjectDs\Customer.cpp(166,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\youse\OneDrive\Documents\GitHub\ProjectDs\ProjectDs\Customer.cpp(206,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\youse\OneDrive\Documents\GitHub\ProjectDs\ProjectDs\Customer.cpp(208,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\youse\OneDrive\Documents\GitHub\ProjectDs\ProjectDs\Customer.cpp(222,21): warning C4018: '<': signed/unsigned mismatch
-  Seller.cpp
-  Generating Code...
-  ProjectDs.vcxproj -> C:\Users\youse\OneDrive\Documents\GitHub\ProjectDs\Debug\ProjectDs.exe
+﻿  ProjectDs.vcxproj -> C:\Users\Mostafa\Documents\GitHub\ProjectDs\Debug\ProjectDs.exe
