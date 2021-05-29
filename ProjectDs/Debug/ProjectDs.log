@@ -1,1 +1,21 @@
-﻿  ProjectDs.vcxproj -> C:\Users\Mostafa\Documents\GitHub\ProjectDs\Debug\ProjectDs.exe
+﻿  Customer.cpp
+C:\Users\Mostafa\Documents\GitHub\ProjectDs\ProjectDs\Customer.cpp(83,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Mostafa\Documents\GitHub\ProjectDs\ProjectDs\Customer.cpp(102,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Mostafa\Documents\GitHub\ProjectDs\ProjectDs\Customer.cpp(133,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Mostafa\Documents\GitHub\ProjectDs\ProjectDs\Customer.cpp(170,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Mostafa\Documents\GitHub\ProjectDs\ProjectDs\Customer.cpp(182,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Mostafa\Documents\GitHub\ProjectDs\ProjectDs\Customer.cpp(222,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Mostafa\Documents\GitHub\ProjectDs\ProjectDs\Customer.cpp(224,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Mostafa\Documents\GitHub\ProjectDs\ProjectDs\Customer.cpp(241,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Mostafa\Documents\GitHub\ProjectDs\ProjectDs\Customer.cpp(282,20): warning C4018: '<': signed/unsigned mismatch
+  ProjectDs.cpp
+C:\Users\Mostafa\Documents\GitHub\ProjectDs\ProjectDs\ProjectDs.cpp(22,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Mostafa\Documents\GitHub\ProjectDs\ProjectDs\ProjectDs.cpp(63,18): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Mostafa\Documents\GitHub\ProjectDs\ProjectDs\ProjectDs.cpp(108,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Mostafa\Documents\GitHub\ProjectDs\ProjectDs\ProjectDs.cpp(146,21): warning C4018: '<': signed/unsigned mismatch
+  Receipt.cpp
+C:\Users\Mostafa\Documents\GitHub\ProjectDs\ProjectDs\Receipt.cpp(23,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Mostafa\Documents\GitHub\ProjectDs\ProjectDs\Receipt.cpp(41,20): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  LINK : C:\Users\Mostafa\Documents\GitHub\ProjectDs\Debug\ProjectDs.exe not found or not built by the last incremental link; performing full link
+  ProjectDs.vcxproj -> C:\Users\Mostafa\Documents\GitHub\ProjectDs\Debug\ProjectDs.exe
