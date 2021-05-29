@@ -1,11 +1,13 @@
-#include "Receipt.h"
+#include "Reciept.h"
 #include<string>
 #include <iostream>
 #include <vector>
 #include "Product.h"
+#include "Reciept.h"
 using namespace std;
 int Receipt::numID = 0;
 float Receipt::Shipment_price = 30.0;
+
 
 Receipt::Receipt()
 {
@@ -15,7 +17,7 @@ Receipt::Receipt()
 	numID++;
 }
 
-Receipt Receipt::storeReceipt(vector<int> cart, vector<Product>p ,  vector<int> q,int cusID )
+Receipt Receipt::storeReceipt(vector<int> cart, vector<Product>p, vector<int> q, int cusID)
 {
 	Receipt tempReceipt;
 	float total = 0;
@@ -32,10 +34,10 @@ Receipt Receipt::storeReceipt(vector<int> cart, vector<Product>p ,  vector<int> 
 	return tempReceipt;
 }
 
-void Receipt::showReciept(vector <Product> p )
+void Receipt::showReciept(vector <Product> p)
 {
 	cout << "Recipt ID : " << this->id << endl;
-	cout << "Customer ID : " << this->Customer_ID<< endl;
+	cout << "Customer ID : " << this->Customer_ID << endl;
 	cout << "All product : " << endl;
 	for (int i = 0; i < pro.size(); i++)
 	{
