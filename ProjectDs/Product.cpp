@@ -34,7 +34,6 @@ void Product::setquantity(int q)
 {
 	this->quantity = q;
 }
-
 int Product::getIndex(int id ,vector<Product>p)
 {
 	for (int i = 0; i < p.size(); i++)

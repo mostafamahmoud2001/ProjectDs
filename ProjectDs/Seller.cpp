@@ -25,20 +25,19 @@ Product Seller::addProduct()
 	string category;
 	int sellerId = this->id , temp;
 	int quantity;
-	cout << "Enter product name : ";
-	cin >> name;
-	cout << endl << "Enter product category :"<<endl<< "1 - book  "<<endl<<"2 - laptop"<<endl<< "3 - mobile"<<endl;
+	cout << endl << "What category do you want to add your product in ?"<<endl<< "1- TV  "<<endl<<"2- Laptop"<<endl<< "3- Mobile"<<endl;
+	cout << "Your choice : ";
 		while (1)
 		{
 			cin >> temp;
 			if (temp >= 1 && temp <= 3)
 				break;
-			cout << "Invalid number"<<endl;
+			cout << "Invalid choice : ";
 		}
 	switch (temp)
 	{
 	case 1 :
-		category = "book";
+		category = "tv";
 		break;
 	case 2 :
 		category = "laptop";
@@ -49,23 +48,29 @@ Product Seller::addProduct()
 	default:
 		break;
 	}
-	cout << endl << "Enter price : ";
+	cout << "Enter product name : ";
+	cin >> name;
+	cout  << "Enter price : ";
 	cin >> price;
-	cout << endl << "Enter Quantity : ";
+	cout  << "Enter quantity : ";
 	cin >> quantity;
 	Product p(name, category, price, sellerId,quantity);
+	cout << "You added the product successfully!"<<endl;
+	cout  << "________________________________________________________________________________________________________________________" << endl;
 	return p;
 }
 int Seller::mainMenuSeller()
 {
 	int choice = -1;
-	cout << "1 - Add product " << endl;
-	cout << "2 - logout"<<endl;
-		while (1) {
+	cout << "1- Add product " << endl;
+	cout << "2- Logout"<<endl;
+	cout << "Your choice : ";
+		while (1) 
+		{
 			cin >> choice;
 			if (choice == 1 || choice == 2)
 				break;
-			cout << "Invalid number" << endl;
+			cout << "Invalid choice : " ;
 		}
 	return choice;
 }

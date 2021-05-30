@@ -40,12 +40,12 @@ int Customer::mainMenuCustomer()
 
 	int choose;
 	cout << "Hello : " << getname() <<endl;
-	cout << "_________________" << endl;
-	cout << "1 - search by category " << endl;
-	cout << "2 - search by name of product " << endl;
-	cout << "3 - display the total price " << endl;
-	cout << "4 - display all receipt " << endl;
-	cout << "5 - logout" << endl;
+	cout << "_____________" << endl;
+	cout << "1- Search by category " << endl;
+	cout << "2- Search by name of product " << endl;
+	cout << "3- Display the total price " << endl;
+	cout << "4- Display all receipt " << endl;
+	cout << "5- Logout" << endl;
 	cout << "Your choice : ";
 	while (true) 
 	{
@@ -55,7 +55,7 @@ int Customer::mainMenuCustomer()
 		else
 			cout << "Enter valid number : " ;
 	}
-	cout << endl << "________________________________________________________________________________________________________________________" << endl;
+	cout << "________________________________________________________________________________________________________________________" << endl;
 	return choose;
 }
 //Done
@@ -227,11 +227,11 @@ void Customer::rate_product(vector<Product> & p, vector<int> id)
 				else
 					cout << "please enter valid rate : ";
 			}
-			cout  << "________________________________________________________________________________________________________________________" << endl;
+			cout << "_____________________________________" << endl;
 		}
 		else if (choice == 2)
 		{
-			cout  << "________________________________________________________________________________________________________________________" << endl;
+			cout <<  "_____________________________________" << endl;
 		}
 	}
 }
@@ -274,7 +274,7 @@ void Customer::display_total(vector<int> &cart , vector<Product> &p)
 	if (s == 1)
 	{
 		cout << "*Confirmation successful*";
-		cout << endl << "________________________________________________________________________________________________________________________" << endl;
+		cout << endl << "_____________________________________" << endl;
 		this->receipt.push_back(Receipt::storeReceipt(cart, p, quantity, this->getID()));
 		cout << "If you want to rate the product " << endl;
 		cout << "1- Yes" << endl;
@@ -291,7 +291,7 @@ void Customer::display_total(vector<int> &cart , vector<Product> &p)
 		cout << "2- No" << endl;
 		cout << "Your choice : ";
 		cin >> s;
-		cout << endl << "_____________________________________" << endl;
+		cout  << "_____________________________________" << endl;
 		if (s == 1)
 		{
 			receipt[receipt.size() - 1].showReciept(p);
@@ -309,9 +309,12 @@ void Customer::display_total(vector<int> &cart , vector<Product> &p)
 //Done
 void Customer::display_allreceipt(vector<Product>p)
 {
+	cout  << "________________________________________________________________________________________________________________________";
+	cout << "                                              *_____ All receipts _____*"<<endl;
 	for (int i = 0; i < receipt.size(); i++)
 	{
-		cout << "Receipt " << i + 1 << endl;
+		cout << "Receipt (" << i + 1<<")" << endl;
+		cout << "____________" << endl;
 		receipt[i].showReciept(p);
 	}
 }

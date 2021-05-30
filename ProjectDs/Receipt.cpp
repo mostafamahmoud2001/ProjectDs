@@ -6,8 +6,6 @@
 using namespace std;
 int Receipt::numID = 0;
 float Receipt::Shipment_price = 30.0;
-
-
 Receipt::Receipt()
 {
 	Customer_ID = 0;
@@ -15,7 +13,6 @@ Receipt::Receipt()
 	total_price = 0;
 	numID++;
 }
-
 Receipt Receipt::storeReceipt(vector<int> cart, vector<Product>p, vector<int> q, int cusID)
 {
 	Receipt tempReceipt;
@@ -32,7 +29,6 @@ Receipt Receipt::storeReceipt(vector<int> cart, vector<Product>p, vector<int> q,
 	tempReceipt.total_price = total + Shipment_price;
 	return tempReceipt;
 }
-
 void Receipt::showReciept(vector <Product> p)
 {
 	cout << "Recipt ID : " << this->id << endl;
@@ -41,11 +37,13 @@ void Receipt::showReciept(vector <Product> p)
 	for (int i = 0; i < pro.size(); i++)
 	{
 		int index = Product::getIndex(pro[i].getid(), p);
-		cout << i + 1 << " :: " << pro[i].getname() << endl;
-		cout << "quantity of product is " << pro[i].getquantity() << endl;
-		cout << "rate of product is " << p[index].rate << endl;
-		cout << "the price is " << pro[i].getprice() << endl;
+		cout << "Product ("<<i + 1<<")"<<endl;
+	    cout<< "Name :" << pro[i].getname() << endl;
+		cout << "Quantity of product is " << pro[i].getquantity() << endl;
+		cout << "Rate of product is " << p[index].rate << endl;
+		cout << "The price of the product is " << pro[i].getprice() << endl;
 		cout << "_________________________________" << endl;
 	}
-	cout << endl << "Total Price with shipment : " << total_price << endl;
+	cout << "Total Price with shipment is " << total_price << endl;
+	cout << "________________________________________________________________________________________________________________________" << endl;
 }
