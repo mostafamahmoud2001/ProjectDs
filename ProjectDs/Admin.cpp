@@ -1,4 +1,6 @@
+#include<iostream>
 #include "Admin.h"
+using namespace std;
 Admin::Admin(string name, string pass, string email)
 {
     this->name =  name;
@@ -44,9 +46,9 @@ void Admin::viewWaitedProduct(vector<Product>& productes)
             while (1)
             {
                 cin >> x;
-                if (x == 1 || x == 0)
+                if (x == 1 || x == 2)
                     break;
-                cout << "invaild choice! " << endl;
+                cout << "invaild choice:" ;
             }
             if (x == 1)
             {
@@ -59,14 +61,14 @@ void Admin::viewWaitedProduct(vector<Product>& productes)
             }
             cout << "___________________________________________" << endl;
         }
+        cout << "No products more" << endl;
     cout << "________________________________________________________________________________________________________________________" << endl;
-    AdminMainMenu();
+    
     }
     else
     {
         cout << "The waiting list is empty !" << endl;
         cout << "________________________________________________________________________________________________________________________" << endl;
-        AdminMainMenu();
     }
 }
 int Admin::AdminMainMenu()

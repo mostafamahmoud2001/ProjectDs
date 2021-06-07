@@ -150,6 +150,7 @@ void seller_signup(vector<Seller>& s1)
 		if(mail==false)
 		{
 		cout << "Invalid email, Enter your email again : ";
+		continue;
 		}
 		for (int i = 0; i < s1.size(); i++)
 		{
@@ -157,20 +158,22 @@ void seller_signup(vector<Seller>& s1)
 			{
 				exist = true;
 				cout << "The email is already exist, Try another email : ";
+				continue;
 			}
 		}
 		if (mail == true&&exist==false)
 			break;
-		cout << "Enter your password : ";
-		for (; true;)
+		
+	}
+	cout << "Enter your password : ";
+	for (; true;)
+	{
+		cin >> password;
+		if (password.length() >= 6)
+			break;
+		else
 		{
-			cin >> password;
-			if (password.length() >= 6)
-				break;
-			else 
-			{
-				cout << "The password should be more than 6 digits : ";
-			}
+			cout << "The password should be more than 6 digits : ";
 		}
 	}
 	cout << "You loged up successflly!" << endl;
@@ -353,13 +356,15 @@ int main()
 					if (x == 1)
 					{
 						admin.viewWaitedProduct(productes);
+						continue;
 					}
 					else
+						cout << "Logout successfully" << endl;
 						cout << endl << "________________________________________________________________________________________________________________________" << endl;
 						break;
 				}
 			}
-			
+			cout << "Invalid email or password !" << endl;
 		}
 		//================================================================================================
 		//Close the program
