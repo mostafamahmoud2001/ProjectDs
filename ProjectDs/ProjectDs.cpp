@@ -226,7 +226,7 @@ int main()
 	Admin admin("admin", "admin", "admin@gmail.com");
 	vector<Customer> customers;
 	vector<Seller> sellers;
-	Customer c1("mostafa", "mostafa@gmail.com","12345", "01211542545", "zsd");
+	Customer c1("mostafa", "mostafa@gmail.com","123456", "01211542545", "zsd");
 	Customer c2("magdy", "magdy@gmail.com", "123445","15457575572", "zsdd");
 	Seller s1("yousef","yousef@gmail.com","123456");
 	customers.push_back(c1);
@@ -364,7 +364,9 @@ int main()
 						break;
 				}
 			}
-			cout << "Invalid email or password !" << endl;
+			else
+				cout << "Invalid email or password !" << endl;
+
 		}
 		//================================================================================================
 		//Close the program
